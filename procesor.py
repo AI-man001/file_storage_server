@@ -15,7 +15,7 @@ class FileProcessor:
     self.procedure = request.form.get('procedure')
     self.fileowner = request.form.get('fileowner')
     self.fileurls = request.form.getlist('fileurls')
-    self.host = f'http://10.0.2.2:5001/uploads/{self.root}'
+    self.host = f'https://splitstorage.herokuapp.com/uploads/{self.root}'
 
   def saveFiles(self):
     #delete existing file if procedure is replace
