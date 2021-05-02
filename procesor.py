@@ -1,13 +1,9 @@
-import os
-import random
-import string
-import shutil
+import shutil, string, random, os
 from urllib.parse import urlparse
 from werkzeug.utils import secure_filename
 
 
 class FileProcessor:
-
   def __init__(self, request):
     self.urlList = []
     self.root = request.form.get('root')
@@ -15,7 +11,7 @@ class FileProcessor:
     self.procedure = request.form.get('procedure')
     self.fileowner = request.form.get('fileowner')
     self.fileurls = request.form.getlist('fileurls')
-    self.host = f'https://splitstorage.herokuapp.com/uploads/{self.root}'
+    self.host = f'https://yourhost/uploads/{self.root}'
 
   def saveFiles(self):
     #delete existing file if procedure is replace
